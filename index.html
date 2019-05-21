@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <a id="zad1" href="" onmouseout="zad1b()" onmouseover="zad1()">LALALAZADANIE1</a>
+    <br>
+    <button onclick="zad2()">ZADANIE2</button>
+    <br>
+    <button onclick="zad3()">ZADANIE3</button>
+
+    <script>
+        var zad11 = document.getElementById("zad1");
+        var zad1a;
+
+        function zad1() {
+            while (true) {
+                zad1a = parseInt(prompt("Введи число"))
+                if (1 + 1 == zad1a) { //getRandomInt(1, 10) * getRandomInt(1, 10) == zad1a) {
+                    alert("Усё");
+                    break;
+                }
+            }
+        }
+
+        function zad1b() {
+            alert("КУРСОР ВЕРНИ!!!")
+        }
+
+
+        function zad2() {
+            var newWin = window.open("zad2.html", "hello", "width=500,height=300");
+        }
+
+        function zad3() {
+            var arr = []
+            while (true) {
+                var a = prompt("Вводи чиселки")
+                if (a == "") {
+                    console.log(arr);
+                    var prod = 1;
+                    arr.forEach(function(e) {
+                        prod *= e;
+                    });
+                    //alert(arr.reduce((a, b) => a * b));
+                    alert(prod)
+                    break;
+                } else {
+                    arr.push(parseInt(a));
+                }
+            }
+        }
+
+        function First(str) {
+            return str[0].toUpperCase() + str.slice(1);
+        }
+
+        console.log(First("ааааааа"));
+
+        function Spam(str) {
+            var str2 = "";
+            for (i = 0; i < str.length; i++) {
+                str2 += str[i].toUpperCase();
+            }
+            console.log(str2)
+            var flag = false;
+            if ((str2.indexOf("VIA") + 1) != 0 || (str2.indexOf('XXX') + 1) != 0) {
+                flag = true
+            }
+            return flag;
+        }
+
+        console.log(Spam("lasldasxxx"))
+        console.log(Spam("jklkjkkjkjk"))
+        console.log(Spam("kapdksapodkviaasdas"))
+
+
+
+
+
+
+
+
+
+
+
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+    </script>
+</body>
+
+</html>
